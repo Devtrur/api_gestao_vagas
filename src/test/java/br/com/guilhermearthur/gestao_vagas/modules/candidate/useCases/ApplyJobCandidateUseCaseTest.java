@@ -16,12 +16,12 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import br.com.guilhermearthur.gestao_vagas.exceptions.JobNotFounException;
+import br.com.guilhermearthur.gestao_vagas.exceptions.JobNotFoundException;
 import br.com.guilhermearthur.gestao_vagas.exceptions.UserNotFoundException;
 import br.com.guilhermearthur.gestao_vagas.modules.candidate.CandidateEntity;
 import br.com.guilhermearthur.gestao_vagas.modules.candidate.CandidateRepository;
 import br.com.guilhermearthur.gestao_vagas.modules.candidate.entity.ApplyJobEntity;
-import br.com.guilhermearthur.gestao_vagas.modules.candidate.repository.ApplyJobRespository;
+import br.com.guilhermearthur.gestao_vagas.modules.candidate.repository.ApplyJobRepository;
 import br.com.guilhermearthur.gestao_vagas.modules.candidate.useCase.ApplyJobCandidateUseCase;
 import br.com.guilhermearthur.gestao_vagas.modules.company.entities.JobEntity;
 import br.com.guilhermearthur.gestao_vagas.modules.company.repositories.JobRepository;
@@ -39,7 +39,7 @@ public class ApplyJobCandidateUseCaseTest {
     private JobRepository jobRepository;
 
     @Mock
-    private ApplyJobRespository applyJobRespository;
+    private ApplyJobRepository applyJobRespository;
 
     @Test
     @DisplayName("Should not be able to apply job with candidate not found")
@@ -62,7 +62,7 @@ public class ApplyJobCandidateUseCaseTest {
         try {
             applyJobCandidateUseCase.execute(idCandidate, null);
         } catch (Exception e) {
-            assertThat(e).isInstanceOf(JobNotFounException.class);
+            assertThat(e).isInstanceOf(JobNotFoundException.class);
         }
     }
 

@@ -5,18 +5,18 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.guilhermearthur.gestao_vagas.exceptions.JobNotFounException;
+import br.com.guilhermearthur.gestao_vagas.exceptions.JobNotFoundException;
 import br.com.guilhermearthur.gestao_vagas.exceptions.UserNotFoundException;
 import br.com.guilhermearthur.gestao_vagas.modules.candidate.CandidateRepository;
 import br.com.guilhermearthur.gestao_vagas.modules.candidate.entity.ApplyJobEntity;
-import br.com.guilhermearthur.gestao_vagas.modules.candidate.repository.ApplyJobRespository;
+import br.com.guilhermearthur.gestao_vagas.modules.candidate.repository.ApplyJobRepository;
 import br.com.guilhermearthur.gestao_vagas.modules.company.repositories.JobRepository;
 
 @Service
 public class ApplyJobCandidateUseCase {
 
     @Autowired
-    private ApplyJobRespository applyJobRespository;
+    private ApplyJobRepository applyJobRespository;
 
     @Autowired
     private CandidateRepository candidateRepository;
@@ -31,7 +31,7 @@ public class ApplyJobCandidateUseCase {
                 });
         this.jobRepository.findById(idJob)
                 .orElseThrow(() -> {
-                    throw new JobNotFounException();
+                    throw new JobNotFoundException();
                 });
 
         var applyJob = ApplyJobEntity.builder()

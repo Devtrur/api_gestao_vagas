@@ -66,7 +66,7 @@ gestao_vagas/
 - Docker (opcional, mas recomendado)
 - PostgreSQL (ou use H2 em memória)
 
-### ▶️ Rodando sem Docker
+### Rodando sem Docker
 
 ```bash
 # Clonar o repositório
@@ -124,7 +124,7 @@ O deploy é automatizado via **GitHub Actions**, que realiza:
 - Interesse em **Back-end, Cloud e Inteligência Artificial**
 - Contato: [LinkedIn](https://www.linkedin.com/in/guilherme-arthur-a805532ab/) • [GitHub](https://github.com/Devtrur)
 
-## 📚 Aprendizados
+## Aprendizados
 
 Durante o desenvolvimento deste projeto, foram explorados e aplicados diversos conceitos:
 
