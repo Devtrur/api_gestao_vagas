@@ -23,7 +23,7 @@ jobs:
         run: docker build -t devtrur/gestao_vagas .
       - name: Publish image
         run: docker push devtrur/gestao_vagas
-  deply:
+  deploy:
     needs: build
     runs-on: self-hosted
     steps:
