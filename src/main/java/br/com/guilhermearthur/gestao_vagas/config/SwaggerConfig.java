@@ -16,9 +16,6 @@ public class SwaggerConfig {
                 .info(new Info().title("Gestao de Vagas").description("API Responsavel pela gestao de vagas")
                         .version("1"))
                 .schemaRequirement("jwt_auth", createSecurityScheme());
-        // .addSecurityItem(new SecurityRequirement().addList("Bearer Authentication"))
-        // .components(new Components().addSecuritySchemes("Bearer Authentication",
-        // createSecurityScheme()));
     }
 
     private SecurityScheme createSecurityScheme() {

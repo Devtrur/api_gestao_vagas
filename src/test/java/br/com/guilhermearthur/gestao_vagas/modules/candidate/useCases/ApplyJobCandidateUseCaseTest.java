@@ -44,9 +44,6 @@ public class ApplyJobCandidateUseCaseTest {
     @Test
     @DisplayName("Should not be able to apply job with candidate not found")
     public void should_not_be_able_to_apply_job_with_candidate_not_found() {
-        // assertThrows(UserNotFoundException.class, () -> {
-        // applyJobCandidateUseCase.execute(null, null);
-        // });
         try {
             applyJobCandidateUseCase.execute(null, null);
         } catch (Exception e) {

@@ -29,7 +29,6 @@ public class SecurityCompanyFilter extends OncePerRequestFilter {
             @NonNull HttpServletResponse response,
             @NonNull FilterChain filterChain)
             throws ServletException, IOException {
-        // SecurityContextHolder.getContext().setAuthentication(null);
         String header = request.getHeader("Authorization");
 
         if (request.getRequestURI().startsWith("/company")) {
@@ -42,7 +41,6 @@ public class SecurityCompanyFilter extends OncePerRequestFilter {
 
                 var roles = token.getClaim("roles").asList(Object.class);
 
-                // verificacao
                 if (roles == null) {
                     roles = Collections.emptyList();
                 }

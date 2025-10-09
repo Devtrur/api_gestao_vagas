@@ -36,14 +36,11 @@ public class AuthCompanyUseCase {
             throw new UsernameNotFoundException("Company not found");
         });
 
-        // verificar se as senhas sao iguais
         var passwordMatches = this.passwordEncoder.matches(authCompanyDTO.getPassword(), company.getPassword());
 
-        // se nao forem iguais -> ERRO
         if (!passwordMatches) {
             throw new AuthenticationException();
         }
-        // se forem iguais -> Gerar um token
         Algorithm algorithm = Algorithm.HMAC256(secretKey);
         var expiresIn = Instant.now().plus(Duration.ofHours(2));
 
@@ -63,5 +60,3 @@ public class AuthCompanyUseCase {
 
     }
 }
-
-// .withExpiresAt(Instant.now().plus(Duration.ofHours(2)))

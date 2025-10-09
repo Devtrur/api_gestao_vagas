@@ -92,9 +92,6 @@ public class CandidateController {
     @PreAuthorize("hasRole('CANDIDATE')")
     @Operation(summary = "Listagem de vagas disponiveis para o candidato", description = "Esta funcao e responsavel por listar todas as vagas disponiveis no filtro")
 
-    // @ApiResponse(responseCode = "200", description = "Lista de vagas retornada
-    // com sucesso", content = @Content(mediaType = "application/json", array =
-    // @ArraySchema(schema = @Schema(implementation = JobEntity.class))))
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Lista de vagas retornada com sucesso", content = @Content(array = @ArraySchema(schema = @Schema(implementation = JobEntity.class))))
     })

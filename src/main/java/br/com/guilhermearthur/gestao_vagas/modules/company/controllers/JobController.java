@@ -35,9 +35,6 @@ public class JobController {
 
     @Tag(name = "Vagas", description = "Info vagas")
     @Operation(summary = "Cadastro de vagas", description = "Esta funcao e responsavel por cadastrar as vagas dentro da empresa")
-    // @ApiResponse(responseCode = "200", description = "Lista de vagas retornada
-    // com sucesso", content = @Content(schema = @Schema(implementation =
-    // JobEntity.class)))
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Lista de vagas retornada com sucesso", content = @Content(schema = @Schema(implementation = JobEntity.class)))
     })
@@ -45,8 +42,6 @@ public class JobController {
     @SecurityRequirement(name = "jwt_auth")
     public ResponseEntity<Object> create(@Valid @RequestBody CreateJobDTO createJobDTO, HttpServletRequest request) {
         var companyId = request.getAttribute("company_id");
-
-        // jobEntity.setCompanyId(UUID.fromString(companyId.toString()));
 
         try {
             var jobEntity = JobEntity.builder()
