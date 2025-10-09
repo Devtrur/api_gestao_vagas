@@ -78,7 +78,7 @@ mvn spring-boot:run
 ```
 
 A aplicação será iniciada em:
-👉 **http://localhost:8080**
+**http://localhost:8080**
 
 ### Rodando com Docker
 
