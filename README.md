@@ -122,7 +122,7 @@ O deploy é automatizado via **GitHub Actions**, que realiza:
 
 - Estudante de Ciência da Computação | Desenvolvedor em formação
 - Interesse em **Back-end, Cloud e Inteligência Artificial**
-- Contato: [LinkedIn](https://www.linkedin.com/in/guilherme-arthur-a805532ab/) • [GitHub](https://github.com/Devtrur)
+- Contato: [LinkedIn](https://www.linkedin.com/in/guilherme-arthur/) • [GitHub](https://github.com/Devtrur)
 
 ## Aprendizados
 
